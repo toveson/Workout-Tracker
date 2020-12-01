@@ -26,10 +26,13 @@ app.use('/api/workouts', apiRoutes);
 
 
 // mongoose connsection
-mongoose.connect(process.env.MONGOD_URI, {
+mongoose.connect(
+    process.env.MONGOD_URI || 'mongidb://localhost/workout', 
+    {
     useNewUrlParser: true,
-    useFindAndModify: false,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
 });
 
 app.listen(PORT, () => console.log('Listening on port %s. Visit http://localhost:%s/ in your browser.', PORT, PORT));
