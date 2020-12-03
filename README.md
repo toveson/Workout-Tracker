@@ -7,7 +7,7 @@ An app that allows the user to create and continue workouts. The user can also v
 
 Link to live site: [Workout-Tracker](https://dry-taiga-10687.herokuapp.com/)
 
-![workout traker](/assets/imgs/weather-dashboard.PNG)
+![workout traker](/assets/imgs/workout-tracker.PNG)
 
 ## Table of Contents
 
