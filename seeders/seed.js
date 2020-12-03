@@ -4,7 +4,8 @@ const db = require("../models");
 
 mongoose.connect(process.env.MONGOD_URI, {
   useNewUrlParser: true,
-  useFindAndModify: false
+  useFindAndModify: false,
+  useUnifiedTopology: true
 });
 
 let workoutSeed = [

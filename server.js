@@ -1,9 +1,9 @@
 // required packages
 const express = require('express');
-const path = require('path');
+// const path = require('path');
 let mongoose = require('mongoose');
 const logger = require('morgan');
-const db = require('./models');
+// const db = require('./models');
 require('dotenv/config');
 
 //  setting up server
@@ -12,6 +12,8 @@ const app = express();
 
 // middleware
 app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 
 // static directory
 app.use(express.static('public'));
@@ -26,8 +28,7 @@ app.use('/api/workouts', apiRoutes);
 
 
 // mongoose connsection
-mongoose.connect(
-    process.env.MONGOD_URI || 'mongidb://localhost/workout', 
+mongoose.connect(process.env.MONGOD_URI, 
     {
     useNewUrlParser: true,
     useUnifiedTopology: true,
